@@ -15,7 +15,10 @@
     "url": "git+https://github.com/zwkang/pkg-name.git"
   },
   "bugs": "https://github.com/zwkang/pkg-name/issues",
-  "keywords": [],
+  "keywords": [
+    "rollup",
+    "rollup-plugin"
+  ],
   "sideEffects": false,
   "exports": {
     ".": {
@@ -61,5 +64,11 @@
     "vitest": "^0.22.1",
     "zwkang-prettier-config": "^0.0.3"
   },
-  "license": "MIT"
+  "peerDependencies": {
+    "rollup": "^3.23.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "rollup-pluginutils": "^2.8.2"
+  }
 }

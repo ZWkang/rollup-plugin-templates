@@ -17,8 +17,7 @@ a simple description
 
 Inspired by
 
-- [antfu/starter-ts](https://github.com/antfu/starter-ts)
-- [egoist/ts-lib-starter](https://github.com/egoist/ts-lib-starter)
+- [rollup/rollup-starter-plugin](https://github.com/rollup/rollup-starter-plugin)
 
 setup a default template to build your own tool, awesome !!
 

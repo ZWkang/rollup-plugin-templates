@@ -1,21 +1,28 @@
 name: Test project cases
-
+run-name: ${{ github.actor }} is testing publish flow in github action
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
-
 jobs:
-  Testing_changes:
+  # job name
+  test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: checkout
+        uses: actions/checkout@v3
         with:
-          node-version: 14.17.0
-      - uses: pnpm/action-setup@v2.0.1
+          fetch-depth: 0
+          persist-credentials: false
+      - name: setup Node.js
+        uses: actions/setup-node@v3
         with:
-          version: 6.15.1
-      - run: pnpm i
+          node-version: 'lts/*'
+          registry-url: https://npm.pkg.github.com/
+          scope: '@zwkang-dev'
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7.9.5
+      - run: pnpm install --frozen-lockfile --strict-peer-dependencies
       - run: pnpm test
